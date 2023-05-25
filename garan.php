@@ -1,3 +1,5 @@
+<?php
+session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,6 +93,11 @@
 <div class="top" >
     <h1 class="toptext">Поиск дешевых билетов в Кино</h1>
     <p class="toptext" >Лучший агрегатор для поиска билетов</p>
+    <?php if (!isset($_SESSION['username'])): ?>
+        <a href="login.php" class="toptext" > Войти в личный кабинет </a>
+    <?php else: ?>
+        <a href="profile.php" style="text-decoration: none" class="toptext" >Личный кабинет: <?php echo $_SESSION['username']; ?></a>
+    <?php endif; ?>
 </div>
 <div class="container">
     <div class="texthold">
@@ -113,7 +120,7 @@
 
         <div class="card">
             <div class="card-title">
-                <a href="index.html"> Вернуться обратно</a>
+                <a href="index.php"> Вернуться обратно</a>
             </div>
         </div>
         <div class="another_text">

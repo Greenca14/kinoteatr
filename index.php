@@ -1,3 +1,6 @@
+<?php
+session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,6 +84,11 @@
 <div class="top" >
     <h1 class="toptext">Поиск дешевых билетов в Кино</h1>
     <p class="toptext" >Лучший агрегатор для поиска билетов</p>
+    <?php if (!isset($_SESSION['username'])): ?>
+        <a href="login.php" class="toptext" > Войти в личный кабинет </a>
+    <?php else: ?>
+        <a href="profile.php" style="text-decoration: none" class="toptext" >Личный кабинет: <?php echo $_SESSION['username']; ?></a>
+    <?php endif; ?>
 </div>
 <div class="container">
     <div class="texthold">
@@ -89,7 +97,7 @@
                 Купить билеты.
             </div>
             <div class="card-body">
-                Перейдя по <a href="ticket.html">ссылке</a>, вы можете приобрести билеты на нужный вам фильм.
+                Перейдя по <a href="ticket.php">ссылке</a>, вы можете приобрести билеты на нужный вам фильм.
             </div>
         </div>
 
@@ -107,7 +115,7 @@
                 Наши гарантии и условия.
             </div>
             <div class="card-body">
-                <a href="garan.html"> Гарантии </a>
+                <a href="garan.php"> Гарантии </a>
             </div>
         </div>
 
