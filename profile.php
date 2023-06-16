@@ -9,7 +9,7 @@ if (!isset($_SESSION['username'])) {
 if ($_SESSION['pfp'] != 'NULL') {
     $pfp = 'data:image/png;base64,'.$_SESSION['pfp'];
 } else {
-    $pfp = './img/default-pfp.jpg';
+    $pfp = './user.png';
 }
 
 ?>
