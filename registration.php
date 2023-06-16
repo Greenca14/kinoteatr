@@ -100,7 +100,7 @@ unset($_SESSION['message']);
     <h1 class="color">Регистрация</h1>
     <div class="auth-form">
         <form action="authentic.php?reg" method="POST" enctype="multipart/form-data">
-            <input type="file" name="addfile" value="Загрузите аватарку" accept=".png">
+            <input required type="file" name="addfile" value="Загрузите аватарку" accept=".png">
             <input type="text" name="login" required placeholder="Логин">
             <input type="password" name="password" required placeholder="Пароль">
             <input type="submit" name="sender" value="Зарегестрироваться">
