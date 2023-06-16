@@ -94,25 +94,25 @@ unset($_SESSION['message']);
     a:hover {
         text-decoration: underline;
     }
+
 </style>
 <div class="container">
-    <h1 class="color">Вход</h1>
-        <div class="auth-form">
-            <form action="authentic.php" method="POST">
-                <input type="text" name="login" required placeholder="Логин">
-                <input type="password" name="password" required placeholder="Пароль">
-                <input type="submit" name="sender" value="Войти">
-<!--                <button onclick="location.href = 'http://kinoteatr/registration.php';" > Зарегестрироваться</button>-->
-                <input onclick="location.href = 'http://kinoteatr/registration.php';" type="button" value="Зарегестрироваться">
-            </form>
+    <h1 class="color">Регистрация</h1>
+    <div class="auth-form">
+        <form action="authentic.php?reg" method="POST" enctype="multipart/form-data">
+            <input type="file" name="addfile" value="Загрузите аватарку" accept=".png">
+            <input type="text" name="login" required placeholder="Логин">
+            <input type="password" name="password" required placeholder="Пароль">
+            <input type="submit" name="sender" value="Зарегестрироваться">
+            <input onclick="location.href = 'http://kinoteatr/login.php';" type="button" value="Войти">
+        </form>
 
-            <?php if (!isset($_SESSION['username'])): ?>
-                <!--        <button> <a href="reg.php">Зарегистрироваться</a></button>-->
-            <?php else: ?>
-                <button><a href="authentic.php?logout=1">Выйти из учетной записи</a></button>
-            <?php endif; ?>
-
-            <button> <a href="index.php">Вернуться на главную</a> </button>
-        </div>
+        <?php if (!isset($_SESSION['username'])): ?>
+            <!--        <button> <a href="reg.php">Зарегистрироваться</a></button>-->
+        <?php else: ?>
+            <button ><a href="authentic.php?logout=1">Выйти из учетной записи</a></button>
+        <?php endif; ?>
+        <button> <a href="index.php">Вернуться на главную</a> </button>
+    </div>
 
 </div>
