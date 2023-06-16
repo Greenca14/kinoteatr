@@ -41,7 +41,7 @@ session_start();?>
             padding: 10px;
             background-image: url("fonkino.jpg");
             background-repeat: no-repeat;
-            height: calc(100vh - 98px);
+            height: calc(90vh - 26px);
             background-size: cover;
         }
 

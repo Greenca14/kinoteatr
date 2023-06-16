@@ -5,6 +5,13 @@ if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit();
 }
+
+if ($_SESSION['pfp'] != 'NULL') {
+    $pfp = 'data:image/png;base64,'.$_SESSION['pfp'];
+} else {
+    $pfp = './img/default-pfp.jpg';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -83,6 +90,9 @@ if (!isset($_SESSION['username'])) {
     a {
         color: white;
     }
+    .image{
+        max-width: 150px;
+    }
 </style>
 
 <html>
@@ -95,6 +105,7 @@ if (!isset($_SESSION['username'])) {
     <div class="center">
         <form action="authentic.php" method="get">
         <h1>Личный кабинет</h1>
+            <img class="image" src="<?php echo $pfp; ?>">
         <h2>Информация о пользователе:</h2>
         <h3>Имя пользователя: <?php echo $_SESSION['username']; ?></h3>
             <div class="center">
